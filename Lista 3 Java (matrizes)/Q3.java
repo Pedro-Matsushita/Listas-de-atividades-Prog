@@ -22,10 +22,10 @@ public class Q3
         System.out.println();
 
         //Chamada dos métodos de troca
-        trocarLinha(m, 2, 8);
-        trocarColuna(m, 4, 9);
+        trocarLinha(m, 1, 7);
+        trocarColuna(m, 3, 9);
         trocarDiagonal(m);
-        trocarLinhaColuna(m, 5, 9);
+        trocarLinhaColuna(m, 4, 9);
         
         //Exibição da matriz após troca
         System.out.println("Exibição da matriz após trocas:\n");
