@@ -13,7 +13,7 @@ public static void main(String[] args){
 
     double calculaMedia = calculaNota(notas, tamanho);
 
-    verificaNotas(notas, nmaior, nmenor, tamanho);
+    verificaNotas(notas, tamanho, nmaior, nmenor);
 
     exibeNotas(nmaior);
     exibeNotas(nmenor);
@@ -37,7 +37,7 @@ public static double calculaNota(double notas[], int tamanho){
 }
 public static void verificaNotas(double notas[], int tamanho, double nmaior[], double nmenor[]){
     for(int i = 0; i<tamanho; i++){
-        if(notas[i] > calculaNota(notas, tamanho){
+        if(notas[i] > calculaNota(notas, tamanho)){
              nmaior[i]=notas[i];
         }
         else{

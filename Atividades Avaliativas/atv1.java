@@ -7,29 +7,35 @@ import java.util.*;
 public class atv1
 {
     public static void main(String[] args){
+
+        // Declaração das variáveis
         int vetA[] = new int[100000];
         int vetB[] = new int[100000];
         int tamanho = vetA.length;
 
+        // Chamada da função de preencher os vetores com valores aleatórios
         entradaValores(vetA, vetB, tamanho);
 
+        // Chamada da função para ordenar os vetores
         int ordenarA[] = selecaoDireta(vetA);
         int ordernarB[] = selecaoDireta(vetB);
 
+        // Início da contagem de execução
         long tempoInicio = System.currentTimeMillis();
-        int vet[] = intercalarVetores(vetA, vetB);
+        int vetC[] = intercalarVetores(vetA, vetB);
         long tempoFim = System.currentTimeMillis();
-
+        // Fim da contagem...
+        
         long tempoExecucao= tempoFim -tempoInicio;
-
+        
         System.out.println("O tempo de execução foi de: "+tempoExecucao);
     }
     // Função para inserir valores aleatórios nos vetores
     public static void entradaValores(int vetA[], int vetB[], int tamanho){
         Random aleatorio = new Random();
         for(int i = 0; i<tamanho; i++){
-            vetA[i]=aleatorio.nextInt(256);
-            vetB[i]=aleatorio.nextInt(256);
+            vetA[i]=aleatorio.nextInt(257);
+            vetB[i]=aleatorio.nextInt(257);
         }
     }
     // Função para ordenar os vetores 
