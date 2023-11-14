@@ -34,7 +34,14 @@ public class sistemacadastro {
         System.out.print("Digite o nome do funcionário que você busca: ");
         String procurado = teclado.nextLine();
 
-        String procurarFuncionario = buscaSequencial(f, procurado);
+        int procurarFuncionario = buscaSequencial(f, procurado);
+        if(procurarFuncionario == -1){
+            System.out.println("\nO nome "+ procurado +" não está presente no cadastro.");
+        } else{
+            //System.out.println("\nO funcionário "+ procurado +" está presente na posição: "+ procurarFuncionario);
+            exibeFuncionarios(procurado);
+        }
+
 
         exibeFuncionarios(f);
     }
@@ -45,19 +52,24 @@ public class sistemacadastro {
                 System.out.println();
             }
         }
-        public static String buscaSequencial(funcionario[] f, String procurado){
+        public static int buscaSequencial(funcionario[] f, String procurado){
+            boolean achou = false;
             for(int i = 0; i < f.length; i++){
-                if(f[i].nome.equals(procurado)){
-                    return procurado;
+                if(f[i].nome.compareTo(procurado) == 0){
+                    achou = true;
+                    break;
                 }
             }
-                System.out.println("O funcionário não foi encontrado!");
-                return null;
+            if(achou == true){
+                    return procurado;
+                } else{
+                    return -1;
+                }
         }
         public static void exibeProcurado(funcionario[] f, String procurado){
             for(int i = 0; i<f.length; i++){
                 if(f[i].nome.equals(procurado)){
-                System.out.println("Nome: "+ f[i].nome);
+                System.out.println("Nome: "+ procurado);
                 System.out.println("Salário: R$"+ f[i].salario);
                 System.out.println();
                 }
